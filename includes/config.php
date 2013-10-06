@@ -11,16 +11,28 @@ class config {
         $this->config_array = $config_array;
     }
 
-    public function get_all_mysql() {
-        return $this->config_array['mysql'];
+    public function get_all(string $var) {
+        if(!isset($this->config_array[$var])) {
+            echo "Config variable [\$var -> $var] not set!\n";
+            exit();
+        }
+        return $this->config_array[$var];
     }
 
-    public function get_mysql_setting(string $setting) {
-        if(!isset($this->config_array['mysql'][$setting]) {
-            echo "Variable not set!\n";
+    public function get_mysql_setting(string $var) {
+        if(!isset($this->config_array['mysql'][$var])) {
+            echo "MySQL config variable [\$var -> $var] not set!\n";
             exit();
         }
         return $this->config_array['mysql'][$setting];
+    }
+
+    public function get_template_setting(string $var) {
+        if(!isset($this->config_array['template'][$var])) {
+            echo "Template config variable [$\var -> $var] not set!\n";
+            exit();
+        }
+        return $this->config_array['template'][$var];
     }
 }
 

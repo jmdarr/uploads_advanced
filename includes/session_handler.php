@@ -16,16 +16,16 @@ class session_handler {
     }
 
     public function isLoggedIn() {
-        return $_SESSION['logged_in']
+        return $_SESSION['logged_in'];
     }
 
     public function setLoggedIn(boolean $logged_in) {
         $_SESSION['logged_in'] = $logged_in;
     }
 
-    public function logIn(string $username, string $passhash) {
-        #$query = "select * from  
-    }
+    /*public function logIn(string $username, string $passhash) {
+        $query = "select * from  
+    }*/
 }
 
 ?>
