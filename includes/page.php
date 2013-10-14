@@ -2,11 +2,11 @@
 
 class page {
     
-    public function __construct() {
-
+    public function display_template(string template) {
+        
+        # force check on file
+        # do not include anything outside of template
     }
-
-    
 }
 
 ?>
