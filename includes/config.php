@@ -34,6 +34,10 @@ class config {
         }
         return $this->config_array['template'][$var];
     }
+
+    /*public function get_site_setting($var) {
+        if(!isset(
+    }*/
 }
 
 ?>
