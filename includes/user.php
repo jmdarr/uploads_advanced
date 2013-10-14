@@ -1,6 +1,6 @@
 <?php
 
-class session_handler {
+class user {
 
     # $_SESSION vars:
     #   logged_in : whether the user is logged in or not.
@@ -10,9 +10,16 @@ class session_handler {
     #       default: ""
     #       expected: Integer
 
+    private $mysql_handler;
+    private $logged_in = false;
+
     public function __construct() {
         if(!isset($_SESSION['logged_in'])) { $_SESSION['logged_in'] = false; }
         if(!isset($_SESSION['user_name'])) { $_SESSION['user_name'] = ""; }
+    }
+
+    public function set_mysql_handler($handler) {
+        $this->mysql_handler = $handler;
     }
 
     public function isLoggedIn() {

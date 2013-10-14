@@ -9,9 +9,16 @@
 
 session_start();
 
-require_once("includes/session_handler.php");
+require_once("includes/config.php");
+require_once("includes/user.php)";
+require_once("includes/page.php");
+require_once("includes/mysql_handler.php)";
 
-$session = new session_handler();
+$config = new config();
+$mysql_handler = new mysql_handler($config);
+$user = new user();
+$page = new page();
+
 /* page.display_header */
 if($session->isLoggedIn()) { /* page.display_user_infos */ }
 else { /* page.display_registration_link */ }

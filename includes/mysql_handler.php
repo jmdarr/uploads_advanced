@@ -1,16 +1,15 @@
 <?php
 
 class mysql_handler {
-    require_once("includes/config.php");
-    private $config = new config();
-
+    private $config;
     private string $db_host;
     private string $db_user;
     private string $db_pass;
     private string $db_name;
     private string $db_port;
 
-    public function __construct() {
+    public function set_config($config_object) {
+        $this->config = $config_object;
         $this->db_host = $this->config->get_mysql_setting("db_host");
         $this->db_user = $this->config->get_mysql_setting("db_user");
         $this->db_pass = $this->config->get_mysql_setting("db_pass");
